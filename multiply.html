@@ -1,0 +1,106 @@
+<!Doctype HTML>
+
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <title>Calculator- Multiply</title>
+    <style>
+        p {
+            margin: 0;
+            background-color: #008B8B;
+            margin-top: 40px;
+        }
+
+        nav {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            min-height: 8vh;
+            background-color: #5d4954;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .logo {
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-around;
+            width: 30%;
+        }
+
+        .nav-links li {
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            letter-spacing: 3px;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: aqua;
+            font-weight: bold;
+        }
+
+        h2[class="1"] {
+            color: red;
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <h4>The Functions</h4>
+        </div>
+        <ul class="nav-links">
+            <li><a href="calc.html">Add</a></li>
+            <li><a href="subtract.html">Subtract</a></li>
+            <li><a href="divide.html">Divide</a></li>
+        </ul>
+    </nav>
+    <h2>How it Works</h2>
+
+    <p>This is a simple calculator that I have built. Please write the dividened and divisor (in that order), then press the "calculate"<br>
+        button to get your answer.</p>
+
+    <h1>Multiply two Fields</h1>
+    <h2 id="answer" class="1"></h2>
+
+
+    Num1<input type="text" id="num1">
+    <br>
+    <br>
+    Num2<input type="text" id="num2">
+    <br>
+    <br>
+    <button onclick="calculate()">Calculate</button>
+
+    <script>
+        function calculate() {
+            var field1 = document.getElementById("num1").value;
+            var field2 = document.getElementById("num2").value;
+
+            var result = parseFloat(field1) * parseFloat(field2);
+
+            if (!isNaN(result)) {
+                document.getElementById("answer").innerHTML = field1 + " multiplied by " + field2 + " = " + result;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
